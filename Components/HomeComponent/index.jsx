@@ -5,14 +5,22 @@ import Sidebar from "../Sidebar";
 
 function HomeComponent() {
   const [showInputWord, setShowInputWord] = useState(false);
+  const [books, setBooks] = useState(false);
 
   const getInput = () => {
     if(!showInputWord){
       setShowInputWord(true);
-    }else{
-      setShowInputWord(false);
     }
   }
+
+  const showBooks = () => {
+    if(books === false){
+      setBooks(true);
+    }else{
+      setBooks(false);
+    }
+  }
+
 
   return (
     <div className="home">
@@ -21,7 +29,10 @@ function HomeComponent() {
         getInput={getInput} 
         showInputWord={showInputWord}
       />
-      <Sidebar />
+      <Sidebar 
+        showbooks={showBooks}  
+        books={books}
+      />
     </div>
   )
 }
