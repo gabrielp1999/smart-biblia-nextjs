@@ -10,6 +10,8 @@ function HomeComponent() {
   const getInput = () => {
     if(!showInputWord){
       setShowInputWord(true);
+    }else{
+      setShowInputWord(false);
     }
   }
 
@@ -20,7 +22,6 @@ function HomeComponent() {
       setBooks(false);
     }
   }
-
 
   return (
     <div className="home">
