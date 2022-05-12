@@ -2,17 +2,15 @@ import react, { useState } from "react";
 import HeadComponent from '../HeadComponent'
 import Header from "../Header";
 import Sidebar from "../Sidebar";
+import Content from "../Content";
+import VerseDay from "../VerseDay";
 
 function HomeComponent() {
   const [showInputWord, setShowInputWord] = useState(false);
   const [books, setBooks] = useState(false);
 
-  const getInput = () => {
-    if(!showInputWord){
-      setShowInputWord(true);
-    }else{
-      setShowInputWord(false);
-    }
+  const toggleInputWord = () => {
+    setShowInputWord(!showInputWord);
   }
 
   const showBooks = () => {
@@ -27,13 +25,15 @@ function HomeComponent() {
     <div className="home">
       <HeadComponent />
       <Header 
-        getInput={getInput} 
+        toggleInputWord={toggleInputWord} 
         showInputWord={showInputWord}
       />
       <Sidebar 
         showbooks={showBooks}  
         books={books}
       />
+      <VerseDay />
+      <Content />
     </div>
   )
 }

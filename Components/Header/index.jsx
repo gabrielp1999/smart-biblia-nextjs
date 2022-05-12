@@ -1,14 +1,27 @@
-import react from "react";
+import React from "react";
 import NavDefault from "../NavDefault";
 import NavSearch from "../NavSearch";
+import * as S  from "./styles";
 
-function Header({ getInput, showInputWord }) {
 
+function Header({ toggleInputWord, showInputWord }) {
+
+  const mountedStyle = {
+    animation: "inAnimation 250ms ease-in"
+  };
+  const unmountedStyle = {
+    animation: "outAnimation 270ms ease-out",
+    animationFillMode: "forwards"
+  };
+  
 
   return (
-    <header className="header-bar">
-    {!showInputWord ? <NavDefault getInput={getInput}/> : <NavSearch />}
-    </header>
+    <S.Wrapper>
+      {!showInputWord ? 
+        <NavDefault toggleInputWord={toggleInputWord} /> : 
+        <NavSearch toggleInputWord={toggleInputWord} />
+      }
+    </S.Wrapper>
   )
 }
 

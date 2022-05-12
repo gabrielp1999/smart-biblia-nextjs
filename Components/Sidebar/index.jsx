@@ -11,7 +11,7 @@ function Sidebar({ showbooks, books }) {
         showbooks={showbooks} 
         books={books} 
       />
-      <Books />
+      {books && <Books />}
     </S.Wrapper>
   )
 }

@@ -17,16 +17,19 @@ export const Span = styled.span`
 
 export const Button = styled.button`
   width: 100%;
-  height: 40px;
-  margin-top: 10px;
-  border: 1px solid;
-  background-color:gainsboro; 
+  height: 3rem;
+  margin-top: 1rem;
+  border: 0.1rem solid;
+  background-color:#fff; 
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10%;
-  font-size: 20px;
+  font-size: 1.6rem;
   font-weight: bold;
+  color: #000;
 `;
 
 export const ImageArrow = styled(Image)``;
+
+

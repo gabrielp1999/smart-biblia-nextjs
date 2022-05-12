@@ -1,16 +1,18 @@
 import React from "react";
 import * as S  from "./styles";
+import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { BsSearch } from 'react-icons/bs';
 
 
-function NavSearch() {
+function NavSearch({ toggleInputWord }) {
   return(
     <S.Wrapper>
-      <S.ReturnImg
-        src="/img/left-arrow.png"
-        height={30}
-        width={30}
-        alt=""
+      <AiOutlineArrowLeft 
+        fontSize={30} 
+        onClick={() => toggleInputWord()}
       />
+      <S.FieldSearch placeholder="Buscar palavra"/>
+      <BsSearch fontSize={30}/>
     </S.Wrapper>
   )
 }
