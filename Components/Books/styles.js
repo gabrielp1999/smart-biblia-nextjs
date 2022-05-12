@@ -65,6 +65,7 @@ export const Input = styled.input`
   padding: 0 1rem;
   border-right: 0.1rem gainsboro;
   border-top: 0.1rem gainsboro;
+  box-shadow: 0 0.4rem 0.4rem rgb(0 0 0 / 30%);
 
   ::placeholder{
     color: #aaa;
