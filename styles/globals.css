@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: #EEE;
-  font-size: 12px;
+  font-size: 10px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -54,12 +54,6 @@ body {
   font-weight: bold;
 }
 
-.div-search-word input {
-  height: 40px;
-  width: 100%;
-  font-size: 22px;
-  padding: 0 10px;
-}
 
 .div-get-word {
   display: flex;

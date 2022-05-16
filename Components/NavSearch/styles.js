@@ -32,6 +32,8 @@ export const FieldSearch = styled.input`
   }
   &:focus{
     outline: 0;
+    border-color: rgb(172, 124, 214);
+    box-shadow: 0 0.4rem 0.4rem rgb(172, 124, 214 / 30%);
   }
 `;
 

@@ -1,10 +1,13 @@
 import React from 'react';
 import * as S from './styles'
+import VerseDay from '../VerseDay/index'
+import PageBook from '../PageBook';
 
 function Content() {
   return(
     <S.Wrapper>
-      <h1>eu sou a MAIN</h1>
+      {/* <VerseDay /> */}
+      <PageBook />
     </S.Wrapper>
   )
 }

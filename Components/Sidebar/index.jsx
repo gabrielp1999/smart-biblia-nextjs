@@ -4,13 +4,16 @@ import Books from "../Books";
 
 import * as S from "./styles";
 
-function Sidebar({ showbooks, books }) {
+function Sidebar({ toggleBooks, books, isDesktop }) {
+
   return(
     <S.Wrapper>
-      <Filters 
-        showbooks={showbooks} 
+      {isDesktop && <S.Title><span>Filtros</span></S.Title>}
+      {!isDesktop && <Filters 
+        toggleBooks={toggleBooks} 
         books={books} 
-      />
+      />}
+     
       {books && <Books />}
     </S.Wrapper>
   )

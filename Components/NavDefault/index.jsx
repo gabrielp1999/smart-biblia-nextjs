@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import * as S  from "./styles";
+import InputDesktop from "../InputDesktop";
 
 function NavDefault({ toggleInputWord }) {
   return(
@@ -15,8 +16,9 @@ function NavDefault({ toggleInputWord }) {
       </S.BoxImg>
       <div className="div-search-word">
         <span>Smart Biblía</span>   
+        <InputDesktop />
       </div>        
-      <S.BoxImg> 
+      <S.BoxSearch> 
         <Image
           onClick={() => toggleInputWord()}
           src="/img/lupa.png"
@@ -24,7 +26,7 @@ function NavDefault({ toggleInputWord }) {
           height={30}
           width={30}
         />
-      </S.BoxImg>
+      </S.BoxSearch>
   </S.Wrapper>
   )
 }

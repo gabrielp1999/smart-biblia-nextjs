@@ -2,11 +2,11 @@ import React from "react";
 
 import * as S from "./styles";
 
-function Filters({ showbooks, books }) {
+function Filters({ toggleBooks, books }) {
   return(
     <S.Filter>
       <S.Span>Filtros</S.Span>
-      <S.Button onClick={() => showbooks()}>Livros 
+      <S.Button onClick={() => toggleBooks()}>Livros 
         <S.ImageArrow
           width={20}
           height={20}

@@ -1,40 +1,43 @@
-import react, { useState } from "react";
+import react, { useState, useEffect } from "react";
 import HeadComponent from '../HeadComponent'
 import Header from "../Header";
-import Sidebar from "../Sidebar";
-import Content from "../Content";
-import VerseDay from "../VerseDay";
+import Container from "../Container";
+import { useMediaQuery } from "react-responsive";
+
+import * as S from './styles';
 
 function HomeComponent() {
   const [showInputWord, setShowInputWord] = useState(false);
   const [books, setBooks] = useState(false);
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)"});
 
   const toggleInputWord = () => {
     setShowInputWord(!showInputWord);
   }
 
-  const showBooks = () => {
-    if(books === false){
-      setBooks(true);
-    }else{
-      setBooks(false);
-    }
+  const toggleBooks = () => {
+    setBooks(!books);
   }
 
+  useEffect(() => {
+    if (isDesktop && !books) {
+      setBooks(true);
+    }
+  }, [isDesktop, books]);
+
   return (
-    <div className="home">
+    <S.Wrapper className="home">
       <HeadComponent />
       <Header 
         toggleInputWord={toggleInputWord} 
         showInputWord={showInputWord}
       />
-      <Sidebar 
-        showbooks={showBooks}  
+      <Container
+        toggleBooks={toggleBooks}  
         books={books}
+        isDesktop={isDesktop}
       />
-      <VerseDay />
-      <Content />
-    </div>
+    </S.Wrapper>
   )
 }
 

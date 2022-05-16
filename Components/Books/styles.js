@@ -6,15 +6,21 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  @media screen and (min-width: 1024px) {
+   width: 80%;
+   margin-top: 1rem;
+   }
 `;
 
 export const Testament = styled.div`
   margin-top: 2rem;
-  border: 0.1rem solid gray;
+  border: 0.1rem solid gainsboro;
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 1rem 0;
+  border-radius: 2rem;
 `;
 
 export const Title = styled.label`
@@ -43,13 +49,18 @@ export const Li = styled.li`
   align-items: center;
   justify-content: center;
   background-color: #7F7B82;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   color: #fff;
   font-weight: bold;
 
   @media screen and (min-width: 768px) {
     width: 70%;
     margin: 1rem auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 100%;
+    margin: 0.5rem auto;
   }
 
   .link {
@@ -71,11 +82,10 @@ export const Input = styled.input`
     color: #aaa;
   }
 
-
   &:focus{
     transition: 2000ms;
     outline: 0;
-    /* border-color: #bfacb5; */
     border-color: rgb(172, 124, 214);
+    box-shadow: 0 0.4rem 0.4rem rgb(172, 124, 214 / 30%);
   }
 `;

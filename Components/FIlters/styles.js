@@ -7,6 +7,10 @@ export const Filter = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
+
+  @media screen and (min-width: 1024px) {
+  width: 80%;
+}
 `;
 
 export const Span = styled.span`
@@ -28,7 +32,7 @@ export const Button = styled.button`
   font-size: 1.6rem;
   font-weight: bold;
   color: #000;
-  box-shadow: 0 0.4rem 0.4rem rgb(0 0 0 / 40%);
+  box-shadow: 0 0.4rem 0.4rem rgb(0 0 0 / 30%);
 `;
 
 export const ImageArrow = styled(Image)``;
