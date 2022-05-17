@@ -6,6 +6,6 @@ export const Wrapper = styled.main`
     width: 1024px;
     margin: auto;
     display: flex;
-}
+  }
 `;
 

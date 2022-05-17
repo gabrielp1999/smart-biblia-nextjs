@@ -2,6 +2,7 @@ import react, { useState, useEffect } from "react";
 import HeadComponent from '../HeadComponent'
 import Header from "../Header";
 import Container from "../Container";
+import Footer from "../Footer";
 import { useMediaQuery } from "react-responsive";
 
 import * as S from './styles';
@@ -37,6 +38,7 @@ function HomeComponent() {
         books={books}
         isDesktop={isDesktop}
       />
+      <Footer />
     </S.Wrapper>
   )
 }
