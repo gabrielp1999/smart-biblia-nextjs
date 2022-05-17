@@ -1,8 +1,31 @@
-import React from "react";
+import React, {useState} from "react";
 import * as S from './styles';
 import Link from "next/link";
 
 function Books() {
+
+  const [newTestament, setNewTestament] = useState([
+    {
+      nome: "Mateus",
+      sigla: "MAT",
+    },
+    {
+      nome: "Pedro",
+      sigla: "PED"
+    }
+  ]);
+
+  const [oldTestament, setOldTestament] = useState([
+    {
+      nome: "João",
+      sigla: "JOA",
+    },
+    {
+      nome: "Amenadiel",
+      sigla: "AMN"
+    }
+  ]);
+
   return(
     <S.Wrapper>
       <S.Input placeholder="Buscar livro"/>
@@ -10,30 +33,22 @@ function Books() {
       <S.Testament>
         <S.Title>Antigo Testamento</S.Title>
         <S.Ul>
-          <S.Li>
-            <Link href=''><a className="link">Gênesis</a></Link>
-          </S.Li>
-          <S.Li>
-            <Link href=''><a className="link">Gênesis</a></Link>
-          </S.Li>
-          <S.Li>
-            <Link href=''><a className="link">Gênesis</a></Link>
-          </S.Li>
+
+          {oldTestament.map(book => (
+            <S.Li key={book.sigla}> <Link href='' ><a className="link">{book.nome}</a></Link> </S.Li>
+          ))}
+
         </S.Ul>
       </S.Testament>
 
       <S.Testament>
         <S.Title>Novo Testamento</S.Title>
         <S.Ul>
-          <S.Li>
-            <Link href=''><a className="link">Apocalipse</a></Link>
-          </S.Li>
-          <S.Li>
-            <Link href=''><a className="link">Apocalipse</a></Link>
-          </S.Li>
-          <S.Li>
-            <Link href=''><a className="link">Apocalipse</a></Link>
-          </S.Li>    
+
+        {newTestament.map(book => (
+            <S.Li key={book.sigla}> <Link href='' ><a className="link">{book.nome}</a></Link> </S.Li>
+          ))}
+
         </S.Ul>
       </S.Testament>
     </S.Wrapper>

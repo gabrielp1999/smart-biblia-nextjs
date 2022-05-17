@@ -1,9 +1,11 @@
+import react, { useState } from "react";
 import Sidebar from "../Sidebar";
 import Content from "../Content";
 
 import * as S from './styles';
 
-function Container({ toggleBooks, books, isDesktop}) {
+function Container({ toggleBooks, books, isDesktop }) {
+
   return (
     <S.Wrapper>
       <Sidebar
