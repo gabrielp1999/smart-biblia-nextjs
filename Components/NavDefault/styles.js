@@ -10,7 +10,7 @@ export const Wrapper = styled.nav`
 
   @media screen and (min-width: 1024px) {
     width: 1024px;
-    padding: 0 1rem;
+    padding: 0 2rem;
 }
 `
 export const BoxSearch = styled.div`
@@ -31,7 +31,9 @@ export const BoxImg = styled.div`
   height: 55px;
   display: flex;
   align-items: center;
-  
+  gap: 2rem;
+  width: 70%;
+  font-size: 2rem;
 
   @media screen and (min-width: 1024px) {
     gap: 2rem;

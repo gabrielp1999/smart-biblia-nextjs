@@ -13,7 +13,7 @@ function NavDefault({ toggleInputWord }) {
           width={35}
           height={35}
        />
-        <span>Smart Biblía</span>   
+        <h3>Smart Biblía</h3>   
       </S.BoxImg>
       <div className="div-search-word">
         <InputDesktop />
