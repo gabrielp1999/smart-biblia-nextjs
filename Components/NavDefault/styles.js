@@ -10,7 +10,7 @@ export const Wrapper = styled.nav`
 
   @media screen and (min-width: 1024px) {
     width: 1024px;
-    justify-content: space-around;
+    padding: 0 1rem;
 }
 `
 export const BoxSearch = styled.div`
@@ -25,13 +25,16 @@ export const BoxSearch = styled.div`
 `
 
 export const BoxImg = styled.div`
-  width: 40px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
   height: 55px;
   display: flex;
   align-items: center;
+  
 
   @media screen and (min-width: 1024px) {
-    margin-right: 26rem;    
+    gap: 2rem;
   }
 `;
 

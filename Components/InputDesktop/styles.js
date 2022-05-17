@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   background-color: #fff;
   display: none;
-  height: 3rem;
-  width: 70%;
+  height: 70%;
+  width: 100%;
   padding: 0 1rem;
   @media screen and (min-width: 1024px) {
     display: flex;
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
   `;
 
 export const Input = styled.input`
-  height: 3rem;
+  height: 100%;
   border-radius: 0.5rem;
   width: 100%;
   font-size: 1.8rem;

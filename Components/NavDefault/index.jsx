@@ -13,9 +13,9 @@ function NavDefault({ toggleInputWord }) {
           width={35}
           height={35}
        />
+        <span>Smart Biblía</span>   
       </S.BoxImg>
       <div className="div-search-word">
-        <span>Smart Biblía</span>   
         <InputDesktop />
       </div>        
       <S.BoxSearch> 
