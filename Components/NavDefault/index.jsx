@@ -4,6 +4,7 @@ import * as S  from "./styles";
 import InputDesktop from "../InputDesktop";
 
 function NavDefault({ toggleInputWord }) {
+
   return(
     <S.Wrapper>
       <S.BoxImg> 

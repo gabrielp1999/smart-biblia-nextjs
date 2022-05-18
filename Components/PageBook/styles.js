@@ -17,8 +17,7 @@ export const Title = styled.span`
   margin-left: 2.2rem;
 `
 
-export const Ul = styled.ul`
-`
+export const Ul = styled.ol``;
 
 export const Paragraph = styled.li`
   font-size: 1.5rem;
