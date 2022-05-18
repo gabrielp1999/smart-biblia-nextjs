@@ -58,3 +58,21 @@ body {
   display: flex;
 }
 
+.container {
+  min-height: calc(100vh - 5.5rem - 4.5rem);
+  width: 1020px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.card {
+  width: 35%;
+  justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.content {
+  width: 65%;
+}

@@ -9,7 +9,7 @@ export const Title = styled.h4`
   font-size: 2.2rem;
 `;
 
-export const Ul = styled.ol`
+export const ListChapters = styled.ol`
   width: 100%;
   margin: 1rem 0;
   display: flex;
@@ -18,11 +18,11 @@ export const Ul = styled.ol`
   height: 6rem;
 `;
 
-export const Li = styled.li`
+export const ItemChapter = styled.li`
   list-style:none ;
 `;
 
-export const A = styled.a`
+export const BoxChapters = styled.div`
   background-color: #444554;
   color: #fff;
   padding: 0.5rem;
@@ -36,4 +36,9 @@ export const A = styled.a`
   align-items: center;
   height: 3.5rem;
   width: 3.5rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(72, 137, 149, 1.5);
+  }
 `;

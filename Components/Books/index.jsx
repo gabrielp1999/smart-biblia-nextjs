@@ -35,7 +35,7 @@ function Books() {
         <S.Ul>
 
           {oldTestament.map(book => (
-            <S.Li key={book.sigla}> <Link href='' ><a className="link">{book.nome}</a></Link> </S.Li>
+            <S.Li key={book.sigla}> <Link href='/livro' ><a className="link">{book.nome}</a></Link> </S.Li>
           ))}
 
         </S.Ul>
@@ -46,7 +46,7 @@ function Books() {
         <S.Ul>
 
         {newTestament.map(book => (
-            <S.Li key={book.sigla}> <Link href='' ><a className="link">{book.nome}</a></Link> </S.Li>
+            <S.Li key={book.sigla}> <Link href='/livro' ><a className="link">{book.nome}</a></Link> </S.Li>
           ))}
 
         </S.Ul>

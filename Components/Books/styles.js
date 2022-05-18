@@ -52,6 +52,10 @@ export const Li = styled.li`
   border-radius: 1rem;
   color: #fff;
   font-weight: bold;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(72, 137, 149, 1.5);
+  }
 
   @media screen and (min-width: 768px) {
     width: 70%;

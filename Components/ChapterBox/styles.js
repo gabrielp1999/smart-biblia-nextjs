@@ -20,9 +20,10 @@ export const Box = styled.div`
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
-`;
 
-export const A = styled.a`
+  `;
+
+export const ItemLink = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,4 +36,9 @@ export const A = styled.a`
   border-radius: 0.5rem;
   font-weight: bold;
   font-size: 1.6rem;
-`;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(72, 137, 149, 1.5);
+  }
+`

@@ -15,13 +15,12 @@ export const Title = styled.span`
   font-size: 3.1rem;
   margin-top: 1rem;
   margin-left: 2.2rem;
-`
+`;
 
-export const Ul = styled.ol``;
+export const List = styled.ol``;
 
-export const Paragraph = styled.li`
+export const ItemList = styled.li`
   font-size: 1.5rem;
   margin-top: 1rem; 
-  list-style-type: none;
 `;
 
