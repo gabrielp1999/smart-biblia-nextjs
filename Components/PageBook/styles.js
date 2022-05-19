@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 90%;
+  width: 100%;
   padding: 1rem 0;
   line-height: 2.2rem;
   margin-top: 0.5rem;
@@ -22,5 +22,7 @@ export const List = styled.ol``;
 export const ItemList = styled.li`
   font-size: 1.5rem;
   margin-top: 1rem; 
+  width: 95%;
+  margin-left: 1rem;
 `;
 

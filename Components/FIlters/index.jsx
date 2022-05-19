@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 
 import * as S from "./styles";
 
-function Filters({ toggleBooks, books }) {
+function Filters({showBooks, toggleBooks}) {
+
   return(
     <S.Filter>
       <S.Span>Filtros</S.Span>
@@ -11,7 +12,7 @@ function Filters({ toggleBooks, books }) {
           width={20}
           height={20}
           alt='Seta'
-          src={books ? '/img/top.png' : '/img/baixo.png'}
+          src={showBooks ? '/img/top.png' : '/img/baixo.png'}
         />
       </S.Button>
     </S.Filter>

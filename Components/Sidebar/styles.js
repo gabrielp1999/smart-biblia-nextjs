@@ -14,7 +14,6 @@ export const Wrapper = styled.div`
     margin: 1.5rem auto 0 auto;
     justify-content: flex-start;
   }
-
 `;
 
 export const Title = styled.div`

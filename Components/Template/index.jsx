@@ -1,20 +1,23 @@
-import React from 'react';
-import Books from '../Books';
 import Footer from '../Footer';
 import Header from '../Header';
+import Sidebar from '../Sidebar';
+
+import * as S from './styles';
 
 function Template({ children }) {
+
   return (
-    <div>
-      <Header/>
-      <main className='container'>
-        <div className='card'>
-        <Books />
-        </div>
-        <div className='content'>{children}</div>
-      </main>
+    <S.Wrapper>
+      <Header 
+      />
+      <S.Container>
+        <S.CardBooks>
+        <Sidebar />
+        </S.CardBooks>
+        <S.CardContent >{children}</S.CardContent>
+      </S.Container>
       <Footer/>
-    </div>
+    </S.Wrapper>
   )
 }
 

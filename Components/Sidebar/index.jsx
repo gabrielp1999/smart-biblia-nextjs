@@ -1,22 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Filters from "../FIlters";
 import Books from "../Books";
 
 import * as S from "./styles";
 
-function Sidebar({ toggleBooks, books, isDesktop }) {
+function Sidebar() {
+  const [showBooks, setShowBooks] = useState(false);
 
-  return(
+  const toggleBooks = () => {
+    setShowBooks(!showBooks);
+  };
+
+  return (
     <S.Wrapper>
-      {isDesktop && <S.Title><span>Filtros</span></S.Title>}
-      {!isDesktop && <Filters 
-        toggleBooks={toggleBooks} 
-        books={books} 
-      />}
-     
-      {books && <Books />}
+      <Filters toggleBooks={toggleBooks} showBooks={showBooks} />
+      <Books showBooks={showBooks} />
     </S.Wrapper>
-  )
+  );
 }
 
 export default Sidebar;

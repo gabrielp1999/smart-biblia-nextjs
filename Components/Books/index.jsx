@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import * as S from './styles';
 import Link from "next/link";
 
-function Books() {
+function Books({ showBooks }) {
 
   const [newTestament, setNewTestament] = useState([
     {
@@ -27,7 +27,7 @@ function Books() {
   ]);
 
   return(
-    <S.Wrapper>
+    <S.Wrapper showBooks={showBooks}>
       <S.Input placeholder="Buscar livro"/>
       
       <S.Testament>

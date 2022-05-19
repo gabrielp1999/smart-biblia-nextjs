@@ -2,7 +2,7 @@ import Template from "../../Components/Template";
 import PageBook from '../../Components/PageBook'
 
 
-const Teste = () => {
+const Livro = () => {
   return (
     <Template>
       <PageBook />
@@ -10,4 +10,4 @@ const Teste = () => {
   )
 }
 
-export default Teste;
+export default Livro;

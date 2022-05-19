@@ -31,7 +31,7 @@ export const BoxImg = styled.div`
   height: 55px;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 0.5rem;
   width: 70%;
   font-size: 2rem;
 
