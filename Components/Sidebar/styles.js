@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   text-align: center;
 
   @media screen and (min-width: 1024px) {
-    width: 35%;
+    width: 100%;
     margin: 1.5rem auto 0 auto;
     justify-content: flex-start;
   }

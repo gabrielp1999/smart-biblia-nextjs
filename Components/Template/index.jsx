@@ -1,24 +1,22 @@
-import Footer from '../Footer';
-import Header from '../Header';
-import Sidebar from '../Sidebar';
+import Footer from "../Footer";
+import Header from "../Header";
+import Sidebar from "../Sidebar";
 
-import * as S from './styles';
+import * as S from "./styles";
 
 function Template({ children }) {
-
   return (
     <S.Wrapper>
-      <Header 
-      />
+      <Header />
       <S.Container>
         <S.CardBooks>
-        <Sidebar />
+          <Sidebar />
         </S.CardBooks>
-        <S.CardContent >{children}</S.CardContent>
+        <S.CardContent>{children}</S.CardContent>
       </S.Container>
-      <Footer/>
+      <Footer />
     </S.Wrapper>
-  )
+  );
 }
 
 export default Template;

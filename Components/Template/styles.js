@@ -8,7 +8,7 @@ export const Container = styled.main`
   width: 90%;
   margin: 0 auto;
   flex-direction: column;
-  
+
   @media screen and (min-width: 1024px) {
     width: 1020px;
     margin: 0 auto;
@@ -18,9 +18,9 @@ export const Container = styled.main`
 `;
 
 export const CardBooks = styled.div`
-  width: 100%;
+  width: 30%;
   text-align: center;
-`
+`;
 export const CardContent = styled.div`
-  width: 100%;
+  width: 70%;
 `;
