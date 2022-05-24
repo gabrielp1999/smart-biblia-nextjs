@@ -6,13 +6,13 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  display: ${({showBooks}) => showBooks ? "block" : "none"};
+  display: ${({ showBooks }) => (showBooks ? "block" : "none")};
 
   @media screen and (min-width: 1024px) {
-   width: 80%;
-   margin-top: 1rem;
-   display: block;
-   }
+    width: 80%;
+    margin-top: 1rem;
+    display: block;
+  }
 `;
 
 export const Testament = styled.div`
@@ -50,10 +50,11 @@ export const Li = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #7F7B82;
+  background-color: #7f7b82;
   border-radius: 1rem;
   color: #fff;
   font-weight: bold;
+
   &:hover {
     cursor: pointer;
     background-color: rgba(72, 137, 149, 1.5);
@@ -70,10 +71,11 @@ export const Li = styled.li`
   }
 
   .link {
-    color: #fff ;
+    color: #fff;
     text-decoration: none;
+    width: 100%;
   }
-`
+`;
 
 export const Input = styled.input`
   height: 3rem;
@@ -84,11 +86,11 @@ export const Input = styled.input`
   border-top: 0.1rem gainsboro;
   box-shadow: 0 0.4rem 0.4rem rgb(0 0 0 / 30%);
 
-  ::placeholder{
+  ::placeholder {
     color: #aaa;
   }
 
-  &:focus{
+  &:focus {
     transition: 2000ms;
     outline: 0;
     border-color: rgb(172, 124, 214);

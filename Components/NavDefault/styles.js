@@ -11,8 +11,8 @@ export const Wrapper = styled.nav`
   @media screen and (min-width: 1024px) {
     width: 1024px;
     padding: 0 2rem;
-}
-`
+  }
+`;
 export const BoxSearch = styled.div`
   width: 40px;
   height: 55px;
@@ -21,8 +21,8 @@ export const BoxSearch = styled.div`
 
   @media screen and (min-width: 1024px) {
     display: none;
-}
-`
+  }
+`;
 
 export const BoxImg = styled.div`
   font-size: 3rem;
@@ -35,9 +35,12 @@ export const BoxImg = styled.div`
   width: 70%;
   font-size: 2rem;
 
+  :hover {
+    cursor: pointer;
+    background-color: transparent;
+  }
+
   @media screen and (min-width: 1024px) {
     gap: 2rem;
   }
 `;
-
-

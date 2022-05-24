@@ -18,9 +18,17 @@ export const Container = styled.main`
 `;
 
 export const CardBooks = styled.div`
-  width: 30%;
+  width: 100%;
   text-align: center;
+
+  @media screen and (min-width: 1024px) {
+    width: 30%;
+  }
 `;
 export const CardContent = styled.div`
-  width: 70%;
+  width: 100%;
+
+  @media screen and (min-width: 1024px) {
+    width: 70%;
+  }
 `;

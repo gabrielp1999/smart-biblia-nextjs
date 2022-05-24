@@ -2,17 +2,15 @@ import Head from "next/head";
 import React, { useState } from "react";
 import NavDefault from "../NavDefault";
 import NavSearch from "../NavSearch";
-import * as S  from "./styles";
-
+import * as S from "./styles";
 
 function Header() {
-
   const [showInputWord, setShowInputWord] = useState(false);
 
   const toggleInputWord = () => {
     setShowInputWord(!showInputWord);
-  }
-  
+  };
+
   return (
     <>
       <Head>
@@ -21,13 +19,14 @@ function Header() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <S.Wrapper>
-        {!showInputWord ? 
-          <NavDefault toggleInputWord={toggleInputWord} /> : 
+        {!showInputWord ? (
+          <NavDefault toggleInputWord={toggleInputWord} />
+        ) : (
           <NavSearch toggleInputWord={toggleInputWord} />
-        }
+        )}
       </S.Wrapper>
     </>
-  )
+  );
 }
 
 export default Header;

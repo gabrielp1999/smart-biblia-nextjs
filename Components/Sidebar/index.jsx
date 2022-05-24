@@ -4,7 +4,7 @@ import Books from "../Books";
 
 import * as S from "./styles";
 
-function Sidebar() {
+function Sidebar({ book }) {
   const [showBooks, setShowBooks] = useState(false);
 
   const toggleBooks = () => {
@@ -14,7 +14,7 @@ function Sidebar() {
   return (
     <S.Wrapper>
       <Filters toggleBooks={toggleBooks} showBooks={showBooks} />
-      <Books showBooks={showBooks} />
+      <Books showBooks={showBooks} book={book} />
     </S.Wrapper>
   );
 }
