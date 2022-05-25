@@ -7,24 +7,34 @@ import { useRouter } from "next/router";
 const Livro = () => {
   const bookApi = useBiblie();
   const router = useRouter();
-  const siglaBook = router.query.sigla;
+  const { sigla: siglaBookSelected, capitulo } = router.query;
+
+  const chapter = capitulo || "1";
+
   const [book, setBook] = useState({
     nome: "",
-    capitulo: "",
+    capitulos: [],
+    sigla: "",
     versiculos: [],
+    capituloSelecionado: "",
   });
 
+  const makeListChapters = (value) =>
+    Array.from({ length: value }, (_, i) => i + 1);
+
   useEffect(() => {
-    bookApi.getBook(siglaBook).then((data) => {
-      // data.map((item) => {
-      //   setBook({
-      //     nome: item.name,
-      //     capitulo: item.chapters,
-      //     versiculos: [1, 5],
-      //   });
-      // });
+    if (!siglaBookSelected) return;
+
+    bookApi.getBook(siglaBookSelected, chapter).then((data) => {
+      setBook({
+        nome: data.name,
+        capitulos: makeListChapters(data.chapters),
+        sigla: siglaBookSelected,
+        versiculos: data.verses,
+        capituloSelecionado: data.selectedChapter,
+      });
     });
-  }, [siglaBook]);
+  }, [siglaBookSelected, chapter]);
 
   return (
     <Template>
