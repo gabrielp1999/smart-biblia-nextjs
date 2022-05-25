@@ -38,7 +38,17 @@ const useBiblie = () => {
     };
   };
 
-  return { getBooks, getBook };
+  const getVerseRandom = async () => {
+    const verse = await axios.get(
+      `${urlBase}/verses/${versionSelected}/random`
+    );
+
+    if (verse.data) {
+      return { verse: verse.data };
+    }
+  };
+
+  return { getBooks, getBook, getVerseRandom };
 };
 
 export default useBiblie;

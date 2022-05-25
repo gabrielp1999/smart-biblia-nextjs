@@ -1,18 +1,63 @@
-import React from "react";
-import * as S from './styles';
+import React, { useState, useEffect } from "react";
+import * as S from "./styles";
+import useBiblie from "../../hooks/useBiblie";
 
 function VerseDay() {
-  return(
-    <S.Wrapper >
+  const verseData = useBiblie();
+
+  const [verse1, setVerse1] = useState({
+    nome: "",
+    capitulo: "",
+    versiculo: "",
+    numeroVersiculo: "",
+  });
+  const [verse2, setVerse2] = useState({
+    nome: "",
+    capitulo: "",
+    versiculo: "",
+    numeroVersiculo: "",
+  });
+
+  useEffect(() => {
+    verseData.getVerseRandom().then((data) => {
+      setVerse1({
+        nome: data.verse.book.name,
+        capitulo: data.verse.chapter,
+        numeroVersiculo: data.verse.number,
+        versiculo: data.verse.text,
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!verse1.nome) {
+      return;
+    }
+    verseData.getVerseRandom().then((data) => {
+      setVerse2({
+        nome: data.verse.book.name,
+        capitulo: data.verse.chapter,
+        numeroVersiculo: data.verse.number,
+        versiculo: data.verse.text,
+      });
+    });
+  }, [verse1.nome]);
+
+  return (
+    <S.Wrapper>
       <S.Title>Versículos do Dia:</S.Title>
 
-      <S.NameBook>João 12:1</S.NameBook>
-      <S.Verse>Seis dias antes da Páscoa Jesus chegou a Betânia, onde vivia Lázaro, a quem ressuscitara dos mortos</S.Verse>
+      <S.NameBook>
+        {verse1.nome} {verse1.capitulo}: {verse1.numeroVersiculo}
+      </S.NameBook>
+      <S.Verse>{verse1.versiculo}</S.Verse>
 
-      <S.NameBook>Apocalipse 16:3</S.NameBook>
-      <S.Verse>O segundo anjo derramou a sua taça no mar, e este se transformou em sangue como de um morto, e morreu toda criatura que vivia no mar.</S.Verse>
+      <S.NameBook>
+        {verse2.nome} {verse2.capitulo}: {verse2.numeroVersiculo}
+      </S.NameBook>
+      <S.Verse>{verse2.versiculo}</S.Verse>
     </S.Wrapper>
-  )
+  );
 }
 
 export default VerseDay;
