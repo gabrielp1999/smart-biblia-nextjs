@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import * as S from "./styles";
 import ChaptersScroll from "../ ChaptersScroll";
 import ChapterBox from "../ChapterBox";
+import { useRouter } from "next/router";
 
 function PageBook({ book }) {
+  const router = useRouter();
+  const { capitulo } = router.query;
   return (
     <S.Wrapper>
-      <ChaptersScroll book={book} />
+      <ChaptersScroll book={book} capitulo={capitulo} />
       <S.Title>
         {book.nome}: {book.capituloSelecionado}
       </S.Title>
@@ -15,7 +18,7 @@ function PageBook({ book }) {
           <S.ItemList key={`chapter-${index}`}>{item}</S.ItemList>
         ))}
       </S.List>
-      <ChapterBox book={book} />
+      <ChapterBox book={book} capitulo={capitulo} />
     </S.Wrapper>
   );
 }

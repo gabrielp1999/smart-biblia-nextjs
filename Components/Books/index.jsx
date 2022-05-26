@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as S from "./styles";
 import Link from "next/link";
 import useBiblie from "../../hooks/useBiblie";
+import { useRouter } from "next/router";
 
 function Books({ showBooks, book }) {
   const [booksFilterVT, setBooksFilterVT] = useState([]);
@@ -9,8 +10,10 @@ function Books({ showBooks, book }) {
   const [searchValue, setSearchValue] = useState("");
   const [listVT, setListVT] = useState([]);
   const [listNT, setListNT] = useState([]);
-
   const books = useBiblie();
+
+  const router = useRouter();
+  const { sigla: siglaBookSelected } = router.query;
 
   useEffect(() => {
     books.getBooks().then((data) => {
@@ -73,7 +76,10 @@ function Books({ showBooks, book }) {
         ) : (
           <S.Ul>
             {booksFilterVT.map((book, index) => (
-              <S.Li key={`VT${index}`}>
+              <S.Li
+                className={siglaBookSelected === book.abbrev.pt && "style-book"}
+                key={`VT${index}`}
+              >
                 <Link
                   href={{
                     pathname: "/livro",

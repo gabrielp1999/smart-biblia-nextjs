@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   width: 100%;
   text-align: center;
+
+  .style-chapter {
+    background-color: rgb(53, 83, 173);
+  }
 `;
 
 export const Title = styled.h4`
@@ -19,7 +23,7 @@ export const ListChapters = styled.ol`
 `;
 
 export const ItemChapter = styled.li`
-  list-style:none ;
+  list-style: none;
 `;
 
 export const BoxChapters = styled.div`
@@ -36,7 +40,6 @@ export const BoxChapters = styled.div`
   align-items: center;
   height: 3.5rem;
   width: 3.5rem;
-
   &:hover {
     cursor: pointer;
     background-color: rgba(72, 137, 149, 1.5);

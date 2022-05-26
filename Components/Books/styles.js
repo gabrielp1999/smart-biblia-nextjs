@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   display: ${({ showBooks }) => (showBooks ? "block" : "none")};
 
+  .style-book {
+    background-color: rgb(53, 83, 173);
+  }
+
   @media screen and (min-width: 1024px) {
     width: 80%;
     margin-top: 1rem;

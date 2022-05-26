@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import * as S from "./styles";
 
-function ChaptersScroll({ book }) {
+function ChaptersScroll({ book, capitulo }) {
+  const chapter = capitulo || "1";
   return (
     <S.Wrapper>
       <S.Title>Capítulos</S.Title>
@@ -15,7 +16,11 @@ function ChaptersScroll({ book }) {
                 query: { sigla: book.sigla, capitulo: item },
               }}
             >
-              <S.BoxChapters>{item.toString()}</S.BoxChapters>
+              <S.BoxChapters
+                className={chapter === item.toString() && "style-chapter"}
+              >
+                {item.toString()}
+              </S.BoxChapters>
             </Link>
           </S.ItemChapter>
         ))}

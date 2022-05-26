@@ -1,7 +1,8 @@
 import * as S from "./styles";
 import Link from "next/link";
 
-function ChapterBox({ book }) {
+function ChapterBox({ book, capitulo }) {
+  const chapter = capitulo || "1";
   return (
     <S.Wrapper>
       <S.Title>Capítulos</S.Title>
@@ -15,7 +16,11 @@ function ChapterBox({ book }) {
             }}
             className="link"
           >
-            <S.ItemLink>{item.toString()}</S.ItemLink>
+            <S.ItemLink
+              className={chapter === item.toString() && "style-chapter"}
+            >
+              {item.toString()}
+            </S.ItemLink>
           </Link>
         ))}
       </S.Box>
