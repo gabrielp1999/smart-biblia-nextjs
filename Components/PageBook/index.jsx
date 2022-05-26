@@ -15,7 +15,9 @@ function PageBook({ book }) {
       </S.Title>
       <S.List>
         {book.versiculos.map((item, index) => (
-          <S.ItemList key={`chapter-${index}`}>{item}</S.ItemList>
+          <S.ItemList id={`#verse-${index + 1}`} key={`verse-${index}`}>
+            {item}
+          </S.ItemList>
         ))}
       </S.List>
       <ChapterBox book={book} capitulo={capitulo} />

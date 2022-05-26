@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import Verse from "../Verse/index";
 import * as S from "./styles";
 import useBiblie from "../../hooks/useBiblie";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 function VerseDay() {
   const verseData = useBiblie();
@@ -10,12 +13,15 @@ function VerseDay() {
     capitulo: "",
     versiculo: "",
     numeroVersiculo: "",
+    sigla: "",
   });
+
   const [verse2, setVerse2] = useState({
     nome: "",
     capitulo: "",
     versiculo: "",
     numeroVersiculo: "",
+    sigla: "",
   });
 
   useEffect(() => {
@@ -25,6 +31,7 @@ function VerseDay() {
         capitulo: data.verse.chapter,
         numeroVersiculo: data.verse.number,
         versiculo: data.verse.text,
+        sigla: data.verse.book.abbrev.pt,
       });
     });
   }, []);
@@ -39,23 +46,28 @@ function VerseDay() {
         capitulo: data.verse.chapter,
         numeroVersiculo: data.verse.number,
         versiculo: data.verse.text,
+        sigla: data.verse.book.abbrev.pt,
       });
     });
   }, [verse1.nome]);
 
   return (
     <S.Wrapper>
-      <S.Title>Versículos do Dia:</S.Title>
-
-      <S.NameBook>
-        {verse1.nome} {verse1.capitulo}: {verse1.numeroVersiculo}
-      </S.NameBook>
-      <S.Verse>{verse1.versiculo}</S.Verse>
-
-      <S.NameBook>
-        {verse2.nome} {verse2.capitulo}: {verse2.numeroVersiculo}
-      </S.NameBook>
-      <S.Verse>{verse2.versiculo}</S.Verse>
+      <Verse
+        titulo="Versículos do dia:"
+        text={verse1.versiculo}
+        livro={verse1.nome}
+        capitulo={verse1.capitulo}
+        versiculo={verse1.numeroVersiculo}
+        sigla={verse1.sigla}
+      />
+      <Verse
+        text={verse2.versiculo}
+        livro={verse2.nome}
+        capitulo={verse2.capitulo}
+        versiculo={verse2.numeroVersiculo}
+        sigla={verse2.sigla}
+      />
     </S.Wrapper>
   );
 }

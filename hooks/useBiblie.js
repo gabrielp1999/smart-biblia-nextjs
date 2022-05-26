@@ -40,7 +40,8 @@ const useBiblie = () => {
 
   const getVerseRandom = async () => {
     const verse = await axios.get(
-      `${urlBase}/verses/${versionSelected}/random`
+      `${urlBase}/verses/${versionSelected}/random`,
+      optionsAPI
     );
 
     if (verse.data) {
