@@ -49,7 +49,20 @@ const useBiblie = () => {
     }
   };
 
-  return { getBooks, getBook, getVerseRandom };
+  const postSearch = async (search) => {
+    const response = await axios.post(
+      `${urlBase}/verses/search`,
+      search,
+      optionsAPI
+    );
+
+    if (response.data) {
+      return response.data;
+    }
+    return [];
+  };
+
+  return { getBooks, getBook, getVerseRandom, postSearch };
 };
 
 export default useBiblie;

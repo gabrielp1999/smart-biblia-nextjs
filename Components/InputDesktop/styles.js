@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
   background-color: #fff;
   display: none;
   height: 70%;
@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
   }
-  `;
+`;
 
 export const Input = styled.input`
   height: 100%;
@@ -19,10 +19,10 @@ export const Input = styled.input`
   font-size: 1.8rem;
   padding: 0 1rem;
   border: none;
-  ::placeholder{
+  ::placeholder {
     color: #aaa;
   }
-  &:focus{
+  &:focus {
     outline: 0;
   }
 `;
@@ -31,4 +31,5 @@ export const boxImg = styled.div`
   color: black;
   display: flex;
   align-items: center;
-`
+  cursor: pointer;
+`;

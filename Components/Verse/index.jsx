@@ -2,10 +2,9 @@ import React from "react";
 import * as S from "./styles";
 import Link from "next/link";
 
-function Verse({ titulo, text, livro, capitulo, versiculo, sigla }) {
+function Verse({ text, livro, capitulo, versiculo, sigla }) {
   return (
     <S.Wrapper>
-      <S.Title>{titulo}</S.Title>
       <S.Text>{text}</S.Text>
       <Link
         href={{

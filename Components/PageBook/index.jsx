@@ -3,10 +3,16 @@ import * as S from "./styles";
 import ChaptersScroll from "../ ChaptersScroll";
 import ChapterBox from "../ChapterBox";
 import { useRouter } from "next/router";
+import Loading from "../Loading";
+import { ItemChapter } from "../ ChaptersScroll/styles";
 
-function PageBook({ book }) {
+function PageBook({ book, isLoading }) {
   const router = useRouter();
-  const { capitulo } = router.query;
+  const { capitulo, versiculo } = router.query;
+  console.log(versiculo);
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <S.Wrapper>
       <ChaptersScroll book={book} capitulo={capitulo} />
@@ -15,7 +21,11 @@ function PageBook({ book }) {
       </S.Title>
       <S.List>
         {book.versiculos.map((item, index) => (
-          <S.ItemList id={`#verse-${index + 1}`} key={`verse-${index}`}>
+          <S.ItemList
+            id={`#verse-${index + 1}`}
+            key={`verse-${index}`}
+            className={Number(versiculo) === index + 1 ? "verseSelected" : ""}
+          >
             {item}
           </S.ItemList>
         ))}

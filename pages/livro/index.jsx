@@ -11,6 +11,7 @@ const Livro = () => {
 
   const chapter = capitulo || "1";
 
+  const [isLoading, setIsLoading] = useState(false);
   const [book, setBook] = useState({
     nome: "",
     capitulos: [],
@@ -24,8 +25,9 @@ const Livro = () => {
 
   useEffect(() => {
     if (!siglaBookSelected) return;
-
+    setIsLoading(true);
     bookApi.getBook(siglaBookSelected, chapter).then((data) => {
+      console.log(data);
       setBook({
         nome: data.name,
         capitulos: makeListChapters(data.chapters),
@@ -33,12 +35,13 @@ const Livro = () => {
         versiculos: data.verses,
         capituloSelecionado: data.selectedChapter,
       });
+      setIsLoading(false);
     });
   }, [siglaBookSelected, chapter]);
 
   return (
     <Template>
-      <PageBook book={book} />
+      <PageBook book={book} isLoading={isLoading} />
     </Template>
   );
 };

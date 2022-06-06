@@ -9,20 +9,26 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 1024px) {
     width: 100%;
   }
+
+  .verseSelected {
+    font-weight: bold;
+    background-color: rgba(224, 224, 224, 0.3);
+    color: #444584;
+  }
 `;
 
-export const Title = styled.span`
-  font-size: 3.1rem;
-  margin-top: 1rem;
+export const Title = styled.h2`
+  font-size: 2.8rem;
   margin-left: 2.2rem;
+  margin-top: 2rem;
 `;
 
 export const List = styled.ol``;
 
 export const ItemList = styled.li`
   font-size: 1.5rem;
-  margin-top: 1rem; 
+  margin-top: 1rem;
   width: 95%;
   margin-left: 1rem;
+  padding: 0.5rem;
 `;
-
