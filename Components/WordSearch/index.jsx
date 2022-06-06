@@ -14,19 +14,14 @@ function WordSearch() {
   const { palavra } = router.query;
   useEffect(() => {
     setIsLoading(true);
-    searchVerse
-      .postSearch({
-        version: "nvi",
-        search: palavra,
-      })
-      .then((data) => {
-        if (data?.verses.length) {
-          setVerses(data.verses);
-        } else {
-          setIsEmpty(true);
-        }
-        setIsLoading(false);
-      });
+    searchVerse.postSearch(palavra).then((data) => {
+      if (data?.verses.length) {
+        setVerses(data.verses);
+      } else {
+        setIsEmpty(true);
+      }
+      setIsLoading(false);
+    });
   }, [palavra]);
 
   if (isLoading) {

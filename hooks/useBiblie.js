@@ -11,7 +11,7 @@ const optionsAPI = {
 
 const useBiblie = () => {
   const getBooks = async () => {
-    const response = await axios.get(`${urlBase}/books`, optionsAPI);
+    const response = await axios.get("/api/books");
     if (response.data) {
       return response.data;
     }
@@ -19,30 +19,18 @@ const useBiblie = () => {
   };
 
   const getBook = async (slug, chapter) => {
-    const responseBook = await axios.get(
-      `${urlBase}/books/${slug}`,
-      optionsAPI
-    );
-    const responseDetailsBook = await axios.get(
-      `${urlBase}/verses/${versionSelected}/${slug}/${chapter}`,
-      optionsAPI
+    const response = await axios.get(
+      `/api/books?slug=${slug}&chapter=${chapter}`
     );
 
-    if (!responseBook || !responseDetailsBook) return null;
-
-    return {
-      name: responseBook.data.name,
-      chapters: responseBook.data.chapters,
-      verses: responseDetailsBook.data.verses.map((item) => item.text),
-      selectedChapter: responseDetailsBook.data.chapter.number,
-    };
+    if (response.data) {
+      return response.data;
+    }
+    return null;
   };
 
   const getVerseRandom = async () => {
-    const verse = await axios.get(
-      `${urlBase}/verses/${versionSelected}/random`,
-      optionsAPI
-    );
+    const verse = await axios.get("/api/verse");
 
     if (verse.data) {
       return { verse: verse.data };
@@ -50,11 +38,7 @@ const useBiblie = () => {
   };
 
   const postSearch = async (search) => {
-    const response = await axios.post(
-      `${urlBase}/verses/search`,
-      search,
-      optionsAPI
-    );
+    const response = await axios.get(`/api/search?q=${search}`);
 
     if (response.data) {
       return response.data;
