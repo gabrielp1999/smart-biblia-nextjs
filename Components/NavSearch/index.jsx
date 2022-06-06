@@ -6,12 +6,14 @@ import Router from "next/router";
 
 function NavSearch({ toggleInputWord }) {
   const [word, setWord] = useState("");
-  const addRouterSearch = () => {
+  const addRouterSearch = (e) => {
+    e.preventDefault();
     if (word) {
       Router.push({
         pathname: "/busca",
         query: { palavra: word },
       });
+      toggleInputWord();
     } else {
       alert("Digite a palavra que deseja pesquisar :)");
     }
@@ -21,10 +23,10 @@ function NavSearch({ toggleInputWord }) {
     setWord(e.target.value);
   };
   return (
-    <S.Wrapper>
+    <S.Wrapper onSubmit={addRouterSearch}>
       <AiOutlineArrowLeft fontSize={30} onClick={() => toggleInputWord()} />
       <S.FieldSearch onChange={valueChange} placeholder="Buscar palavra" />
-      <BsSearch fontSize={30} onClick={() => addRouterSearch()} />
+      <BsSearch fontSize={30} onClick={addRouterSearch} />
     </S.Wrapper>
   );
 }
