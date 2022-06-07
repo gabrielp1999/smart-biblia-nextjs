@@ -15,6 +15,10 @@ function Header() {
     <>
       <Head>
         <title>Smart Biblía 2.0</title>
+        <link rel="shortcut icon" href="/img/logo.png" />{" "}
+        <link rel="apple-touch-icon" href="/img/logo.png" />{" "}
+        <link rel="manifest" href="/manifest.json" />{" "}
+        <meta name="theme-color" content="#06092B" />
         <meta
           name="description"
           content="Smart Bíblia nova versão 2.0 desenvolvida por Gabriel Pereira "
