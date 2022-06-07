@@ -38,7 +38,7 @@ export const BoxImg = styled.div`
 
   :hover,
   :focus {
-    transform: scale(1.1);
+    transform: scale(1.04);
   }
 
   @media screen and (min-width: 1024px) {

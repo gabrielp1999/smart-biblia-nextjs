@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef } from "react";
+import { animateScroll } from "react-scroll";
 import * as S from "./styles";
 import ChaptersScroll from "../ ChaptersScroll";
 import ChapterBox from "../ChapterBox";
 import { useRouter } from "next/router";
 import Loading from "../Loading";
-import Link from "react-scroll";
 
 function PageBook({ book, isLoading }) {
   const router = useRouter();
   const { capitulo, versiculo } = router.query;
+  const myVerseRef = useRef();
+
+  useEffect(() => {
+    if (!versiculo || !myVerseRef?.current?.offsetTop) return;
+
+    const y = myVerseRef.current.offsetTop;
+
+    animateScroll.scrollTo(y - 10);
+  }, [versiculo, myVerseRef.current]);
 
   if (isLoading) {
     return <Loading />;
@@ -22,8 +31,8 @@ function PageBook({ book, isLoading }) {
       <S.List>
         {book.versiculos.map((item, index) => (
           <S.ItemList
-            id={`#verse-${index + 1}`}
             key={`verse-${index}`}
+            ref={index + 1 === Number(versiculo) ? myVerseRef : null}
             className={Number(versiculo) === index + 1 ? "verseSelected" : ""}
           >
             {item}

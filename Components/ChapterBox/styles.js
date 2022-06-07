@@ -41,6 +41,10 @@ export const ItemLink = styled.div`
 
   &:hover {
     cursor: pointer;
-    background-color: rgba(72, 137, 149, 1.5);
+    background-color: rgba(72, 137, 149, 0.8);
+  }
+  :hover,
+  :focus {
+    transform: scale(1.02);
   }
 `;

@@ -8,6 +8,11 @@ export const Wrapper = styled.div`
   align-items: flex-end;
   gap: 1.5rem;
   background: rgba(224, 224, 224, 0.3);
+  cursor: pointer;
+  :hover,
+  :focus {
+    transform: scale(1.02);
+  }
 `;
 
 export const Title = styled.h2`

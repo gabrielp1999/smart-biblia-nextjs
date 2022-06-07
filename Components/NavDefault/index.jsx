@@ -20,7 +20,7 @@ function NavDefault({ toggleInputWord }) {
       </div>
       <S.BoxSearch>
         <Image
-          onClick={() => toggleInputWord()}
+          onClick={toggleInputWord}
           src="/img/lupa.png"
           alt=""
           height={30}

@@ -17,9 +17,8 @@ function Books({ showBooks, book }) {
   useEffect(() => {
     const getStorage = localStorage.getItem("data");
     const dataStorage = JSON.parse(getStorage);
-
-    books.getBooks().then((data) => {
-      if (!getStorage) {
+    if (!getStorage) {
+      books.getBooks().then((data) => {
         localStorage.setItem("data", JSON.stringify(data));
         const booksVT = makeFilter(data, "VT");
         const booksNT = makeFilter(data, "NT");
@@ -27,15 +26,15 @@ function Books({ showBooks, book }) {
         setListVT(booksVT);
         setBooksFilterVT(booksVT);
         setBooksFilterNT(booksNT);
-      } else {
-        const booksVT = makeFilter(dataStorage, "VT");
-        const booksNT = makeFilter(dataStorage, "NT");
-        setListNT(booksNT);
-        setListVT(booksVT);
-        setBooksFilterVT(booksVT);
-        setBooksFilterNT(booksNT);
-      }
-    });
+      });
+    } else {
+      const booksVT = makeFilter(dataStorage, "VT");
+      const booksNT = makeFilter(dataStorage, "NT");
+      setListNT(booksNT);
+      setListVT(booksVT);
+      setBooksFilterVT(booksVT);
+      setBooksFilterNT(booksNT);
+    }
   }, []);
 
   const makeFilter = (listBook, testament) => {

@@ -61,9 +61,12 @@ export const Li = styled.li`
 
   &:hover {
     cursor: pointer;
-    background-color: rgba(72, 137, 149, 1.5);
+    background-color: rgba(72, 137, 149, 0.8);
   }
-
+  :hover,
+  :focus {
+    transform: scale(1.02);
+  }
   @media screen and (min-width: 768px) {
     width: 70%;
     margin: 1rem auto;
