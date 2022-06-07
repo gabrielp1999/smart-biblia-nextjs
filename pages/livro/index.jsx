@@ -27,7 +27,6 @@ const Livro = () => {
     if (!siglaBookSelected) return;
     setIsLoading(true);
     bookApi.getBook(siglaBookSelected, chapter).then((data) => {
-      console.log(data);
       setBook({
         nome: data.name,
         capitulos: makeListChapters(data.chapters),

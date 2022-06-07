@@ -11,7 +11,9 @@ function NavDefault({ toggleInputWord }) {
         <Link href="/">
           <Image alt="biblia" src="/img/logo.png" width={35} height={35} />
         </Link>
-        <h3>Smart Biblía</h3>
+        <Link href="/">
+          <h3>Smart Biblía</h3>
+        </Link>
       </S.BoxImg>
       <div className="div-search-word">
         <InputDesktop />

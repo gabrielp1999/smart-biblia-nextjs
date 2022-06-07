@@ -4,12 +4,12 @@ import ChaptersScroll from "../ ChaptersScroll";
 import ChapterBox from "../ChapterBox";
 import { useRouter } from "next/router";
 import Loading from "../Loading";
-import { ItemChapter } from "../ ChaptersScroll/styles";
+import Link from "react-scroll";
 
 function PageBook({ book, isLoading }) {
   const router = useRouter();
   const { capitulo, versiculo } = router.query;
-  console.log(versiculo);
+
   if (isLoading) {
     return <Loading />;
   }

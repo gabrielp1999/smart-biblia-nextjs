@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div``;
 
 export const Container = styled.main`
-  min-height: calc(100vh - 5.5rem - 4.5rem);
+  min-height: calc(100vh - 5.5rem - 6rem);
   display: flex;
   width: 90%;
   margin: 0 auto;

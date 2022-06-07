@@ -1,12 +1,18 @@
 import Template from "../Components/Template";
 import VerseDay from "../Components/VerseDay";
-import Verse from "../Components/Verse";
 
-export default function Home() {
+export default function Home({ nome }) {
   return (
     <Template>
       <VerseDay />
-      {/* <Verse /> */}
     </Template>
   );
+}
+
+export function getStaticProps() {
+  return {
+    props: {
+      nome: "FlipGGS",
+    },
+  };
 }

@@ -11,18 +11,30 @@ function Books({ showBooks, book }) {
   const [listVT, setListVT] = useState([]);
   const [listNT, setListNT] = useState([]);
   const books = useBiblie();
-
   const router = useRouter();
   const { sigla: siglaBookSelected } = router.query;
 
   useEffect(() => {
+    const getStorage = localStorage.getItem("data");
+    const dataStorage = JSON.parse(getStorage);
+
     books.getBooks().then((data) => {
-      const booksVT = makeFilter(data, "VT");
-      const booksNT = makeFilter(data, "NT");
-      setListNT(booksNT);
-      setListVT(booksVT);
-      setBooksFilterVT(booksVT);
-      setBooksFilterNT(booksNT);
+      if (!getStorage) {
+        localStorage.setItem("data", JSON.stringify(data));
+        const booksVT = makeFilter(data, "VT");
+        const booksNT = makeFilter(data, "NT");
+        setListNT(booksNT);
+        setListVT(booksVT);
+        setBooksFilterVT(booksVT);
+        setBooksFilterNT(booksNT);
+      } else {
+        const booksVT = makeFilter(dataStorage, "VT");
+        const booksNT = makeFilter(dataStorage, "NT");
+        setListNT(booksNT);
+        setListVT(booksVT);
+        setBooksFilterVT(booksVT);
+        setBooksFilterNT(booksNT);
+      }
     });
   }, []);
 

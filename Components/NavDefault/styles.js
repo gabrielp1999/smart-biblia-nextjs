@@ -34,13 +34,16 @@ export const BoxImg = styled.div`
   gap: 0.5rem;
   width: 70%;
   font-size: 2rem;
+  cursor: pointer;
 
-  :hover {
-    cursor: pointer;
-    background-color: transparent;
+  :hover,
+  :focus {
+    transform: scale(1.1);
   }
 
   @media screen and (min-width: 1024px) {
     gap: 2rem;
+    width: 22%;
+    padding: 0 0.5rem;
   }
 `;
