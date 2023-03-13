@@ -10,6 +10,7 @@ function PageBook({ book, isLoading }) {
   const router = useRouter();
   const { capitulo, versiculo } = router.query;
   const myVerseRef = useRef();
+  console.log(book, "biel")
 
   useEffect(() => {
     if (!versiculo || !myVerseRef?.current?.offsetTop) return;
@@ -35,7 +36,7 @@ function PageBook({ book, isLoading }) {
             ref={index + 1 === Number(versiculo) ? myVerseRef : null}
             className={Number(versiculo) === index + 1 ? "verseSelected" : ""}
           >
-            {item}
+           {index + 1}- {item}
           </S.ItemList>
         ))}
       </S.List>

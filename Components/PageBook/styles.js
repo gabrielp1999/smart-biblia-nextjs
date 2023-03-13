@@ -19,16 +19,16 @@ export const Wrapper = styled.div`
 
 export const Title = styled.h2`
   font-size: 2.8rem;
-  margin-left: 2.2rem;
   margin-top: 2rem;
 `;
 
-export const List = styled.ol``;
+export const List = styled.ul`
+  list-style-type: none;
+  margin-top: 2rem;
+`;
 
 export const ItemList = styled.li`
   font-size: 1.5rem;
   margin-top: 1rem;
-  width: 95%;
-  margin-left: 1rem;
-  padding: 0.5rem;
+  width: 100%;
 `;

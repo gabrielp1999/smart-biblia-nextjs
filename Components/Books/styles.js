@@ -49,7 +49,8 @@ export const Li = styled.li`
   list-style: none;
   border: none;
   margin: 0.5rem 0;
-  height: 3rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   font-size: 1.5rem;
   display: flex;
   align-items: center;

@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Filters from "../FIlters";
 import Books from "../Books";
+import { useRouter } from "next/router";
 
 import * as S from "./styles";
 
 function Sidebar({ book }) {
+  const router = useRouter();
+  const { sigla: siglaBookSelected } = router.query;
   const [showBooks, setShowBooks] = useState(false);
+
+
+  useEffect(() => {
+    setShowBooks(false)
+
+  },[siglaBookSelected])
 
   const toggleBooks = () => {
     setShowBooks(!showBooks);
