@@ -7,7 +7,7 @@ function Footer() {
   return (
     <S.Wrapper>
       <S.FooterSon>
-        <S.Text>Copryght 2022</S.Text>
+        <S.Text>Copryght 2023</S.Text>
         <Link target="_blank" href="https://github.com/gabrielp1999">
           <S.BoxImage>
             <S.Text>Desenvolvido por Gabriel Pereira</S.Text>
